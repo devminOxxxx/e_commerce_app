@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../dto/common/response_wrapeer/response_wrapper.dart';
 import '../../../dto/display/menu/menu.dto.dart';

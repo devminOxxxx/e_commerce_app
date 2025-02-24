@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'core/theme/theme_data.dart';
 import 'data/data_source/mock/display/display.mock_api.dart';
+import 'data/repository_impl/display.repository_impl.dart';
+import 'domain/repository/display.repository.dart';
+import 'presentation/main/cubit/mall_type_cubit.dart';
 import 'presentation/routes/routes.dart';
 
 void main() async{
-  final data = await DispalyMockApi().getMenusByMallType('market');
+  final data = await DisplayRepositoryImpl(DispalyMockApi()).getMenusByMallType(mallType: MallType.market);
   print(data);
   runApp(const MainApp());
 }
