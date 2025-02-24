@@ -23,7 +23,7 @@ ResponseWrapper<T> _$ResponseWrapperFromJson<T>(
 mixin _$ResponseWrapper<T> {
   String get status => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  String get massage => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
@@ -39,7 +39,7 @@ abstract class $ResponseWrapperCopyWith<T, $Res> {
           ResponseWrapper<T> value, $Res Function(ResponseWrapper<T>) then) =
       _$ResponseWrapperCopyWithImpl<T, $Res, ResponseWrapper<T>>;
   @useResult
-  $Res call({String status, String code, String massage, T? data});
+  $Res call({String status, String code, String message, T? data});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$ResponseWrapperCopyWithImpl<T, $Res, $Val extends ResponseWrapper<T>>
   $Res call({
     Object? status = null,
     Object? code = null,
-    Object? massage = null,
+    Object? message = null,
     Object? data = freezed,
   }) {
     return _then(_value.copyWith(
@@ -69,9 +69,9 @@ class _$ResponseWrapperCopyWithImpl<T, $Res, $Val extends ResponseWrapper<T>>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      massage: null == massage
-          ? _value.massage
-          : massage // ignore: cast_nullable_to_non_nullable
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
               as String,
       data: freezed == data
           ? _value.data
@@ -89,7 +89,7 @@ abstract class _$$ResponseWrapperImplCopyWith<T, $Res>
       __$$ResponseWrapperImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({String status, String code, String massage, T? data});
+  $Res call({String status, String code, String message, T? data});
 }
 
 /// @nodoc
@@ -105,7 +105,7 @@ class __$$ResponseWrapperImplCopyWithImpl<T, $Res>
   $Res call({
     Object? status = null,
     Object? code = null,
-    Object? massage = null,
+    Object? message = null,
     Object? data = freezed,
   }) {
     return _then(_$ResponseWrapperImpl<T>(
@@ -117,9 +117,9 @@ class __$$ResponseWrapperImplCopyWithImpl<T, $Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      massage: null == massage
-          ? _value.massage
-          : massage // ignore: cast_nullable_to_non_nullable
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
               as String,
       data: freezed == data
           ? _value.data
@@ -135,7 +135,7 @@ class _$ResponseWrapperImpl<T>
     with DiagnosticableTreeMixin
     implements _ResponseWrapper<T> {
   const _$ResponseWrapperImpl(
-      {this.status = '', this.code = '', this.massage = '', this.data});
+      {this.status = '', this.code = '', this.message = '', this.data});
 
   factory _$ResponseWrapperImpl.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
@@ -149,13 +149,13 @@ class _$ResponseWrapperImpl<T>
   final String code;
   @override
   @JsonKey()
-  final String massage;
+  final String message;
   @override
   final T? data;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ResponseWrapper<$T>(status: $status, code: $code, massage: $massage, data: $data)';
+    return 'ResponseWrapper<$T>(status: $status, code: $code, message: $message, data: $data)';
   }
 
   @override
@@ -165,7 +165,7 @@ class _$ResponseWrapperImpl<T>
       ..add(DiagnosticsProperty('type', 'ResponseWrapper<$T>'))
       ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('massage', massage))
+      ..add(DiagnosticsProperty('message', message))
       ..add(DiagnosticsProperty('data', data));
   }
 
@@ -176,13 +176,13 @@ class _$ResponseWrapperImpl<T>
             other is _$ResponseWrapperImpl<T> &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.massage, massage) || other.massage == massage) &&
+            (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, status, code, massage,
+  int get hashCode => Object.hash(runtimeType, status, code, message,
       const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
@@ -202,7 +202,7 @@ abstract class _ResponseWrapper<T> implements ResponseWrapper<T> {
   const factory _ResponseWrapper(
       {final String status,
       final String code,
-      final String massage,
+      final String message,
       final T? data}) = _$ResponseWrapperImpl<T>;
 
   factory _ResponseWrapper.fromJson(
@@ -214,7 +214,7 @@ abstract class _ResponseWrapper<T> implements ResponseWrapper<T> {
   @override
   String get code;
   @override
-  String get massage;
+  String get message;
   @override
   T? get data;
   @override

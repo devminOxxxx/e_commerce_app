@@ -11,5 +11,5 @@ abstract class DisplayApi {
 
   @GET('/api/menus/{mall_type}')
   Future<ResponseWrapper<List<MenuDto>>> getMenusByMallType(
-      @Path('mall_type') String mallType);
+      @Path('mall_type') String mallType,);
 }

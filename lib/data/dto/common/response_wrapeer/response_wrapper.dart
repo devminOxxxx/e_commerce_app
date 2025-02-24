@@ -9,7 +9,7 @@ class ResponseWrapper<T> with _$ResponseWrapper<T> {
   const factory ResponseWrapper({
     @Default('') String status,
     @Default('') String code,
-    @Default('') String massage,
+    @Default('') String message,
     T? data,
   }) = _ResponseWrapper;
 

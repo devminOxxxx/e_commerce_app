@@ -13,7 +13,7 @@ _$ResponseWrapperImpl<T> _$$ResponseWrapperImplFromJson<T>(
     _$ResponseWrapperImpl<T>(
       status: json['status'] as String? ?? '',
       code: json['code'] as String? ?? '',
-      massage: json['massage'] as String? ?? '',
+      message: json['message'] as String? ?? '',
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
     );
 
@@ -24,7 +24,7 @@ Map<String, dynamic> _$$ResponseWrapperImplToJson<T>(
     <String, dynamic>{
       'status': instance.status,
       'code': instance.code,
-      'massage': instance.massage,
+      'message': instance.message,
       'data': _$nullableGenericToJson(instance.data, toJsonT),
     };
 

@@ -5,7 +5,7 @@ extension ResponseWrapperX on ResponseWrapper {
     return ResponseWrapper<T>(
       status: status,
       code: code,
-      massage: massage,
+      message: message,
       data: data,
     );
   }

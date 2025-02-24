@@ -12,7 +12,7 @@ class DispalyMockApi implements DisplayApi {
       () => ResponseWrapper(
         status: 'SUCCES',
         code: '0000',
-        massage: '',
+        message: '',
         data: menuParser(mallType == 'market'
             ? DisplayMockData.menusByMarket
             : DisplayMockData.menusByBeauty),
