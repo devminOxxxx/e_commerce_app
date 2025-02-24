@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../../../../core/theme/constant/app_icons.dart';
 import '../../../../core/theme/custom/custom_app_bar.dart';
 import '../../../../core/theme/custom/custom_font_weight.dart';
-import '../../../../core/theme/custom/custom_theme.dart';
 import '../../cubit/mall_type_cubit.dart';
 import '../widgets/svg_icon_button.dart';
 
@@ -44,7 +41,8 @@ class HomeAppBar extends StatelessWidget {
                   indicator: BoxDecoration(
                     color: state.theme.indicatorColor,
                     borderRadius: BorderRadius.all(
-                        Radius.circular(CustomAppBarTheme.tabBarRadius)),
+                      Radius.circular(CustomAppBarTheme.tabBarRadius),
+                    ),
                   ),
                   indicatorSize: TabBarIndicatorSize.tab,
                   dividerColor: Colors.transparent,
@@ -56,7 +54,8 @@ class HomeAppBar extends StatelessWidget {
                   onTap: (index) =>
                       context.read<MallTypeCubit>().changeIndex(index),
                   splashBorderRadius: BorderRadius.all(
-                      Radius.circular(CustomAppBarTheme.tabBarRadius)),
+                    Radius.circular(CustomAppBarTheme.tabBarRadius),
+                  ),
                 ),
               ),
             ),
