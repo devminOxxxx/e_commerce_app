@@ -5,12 +5,12 @@ import '../../../dto/display/menu/menu.dto.dart';
 import '../../remote/display/display.api.dart';
 import 'display_mock_data.dart';
 
-class DispalyMockApi implements DisplayApi {
+class DisplayMockApi implements DisplayApi {
   @override
   Future<ResponseWrapper<List<MenuDto>>> getMenusByMallType(String mallType) {
     return Future(
       () => ResponseWrapper(
-        status: 'SUCCES',
+        status: 'SUCCESS',
         code: '0000',
         message: '',
         data: menuParser(mallType == 'market'

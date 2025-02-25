@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'core/theme/theme_data.dart';
 import 'data/data_source/mock/display/display.mock_api.dart';
 import 'data/repository_impl/display.repository_impl.dart';
-import 'domain/repository/display.repository.dart';
+import 'domain/usecase/display/display.usecase.dart';
+import 'domain/usecase/display/menu/get_menus.usecase.dart';
 import 'presentation/main/cubit/mall_type_cubit.dart';
 import 'presentation/routes/routes.dart';
+import 'service_locator.dart';
 
-void main() async{
-  final data = await DisplayRepositoryImpl(DispalyMockApi()).getMenusByMallType(mallType: MallType.market);
-  print(data);
+void main() async {
+  setLocator();
+  final menus = await locator<DisplayUsecase>().excute(usecase: GetMenusUsecase(mallType: MallType.market));
+  print(menus);
   runApp(const MainApp());
 }
 
