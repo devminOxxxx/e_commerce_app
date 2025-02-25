@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import '../../../dto/common/response_wrapeer/response_wrapper.dart';
 import '../../../dto/display/menu/menu.dto.dart';
@@ -13,9 +14,11 @@ class DisplayMockApi implements DisplayApi {
         status: 'SUCCESS',
         code: '0000',
         message: '',
-        data: menuParser(mallType == 'market'
-            ? DisplayMockData.menusByMarket
-            : DisplayMockData.menusByBeauty),
+        data: menuParser(
+          mallType == 'market'
+              ? DisplayMockData.menusByMarket
+              : DisplayMockData.menusByBeauty,
+        ),
       ),
     );
   }

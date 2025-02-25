@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'core/theme/theme_data.dart';
+import 'core/utils/exception/common_exception.dart';
+import 'core/utils/logger.dart';
 import 'data/data_source/mock/display/display.mock_api.dart';
 import 'data/repository_impl/display.repository_impl.dart';
 import 'domain/usecase/display/display.usecase.dart';
@@ -10,8 +12,14 @@ import 'service_locator.dart';
 
 void main() async {
   setLocator();
-  final menus = await locator<DisplayUsecase>().excute(usecase: GetMenusUsecase(mallType: MallType.market));
-  print(menus);
+
+  try {
+    final test = await DisplayMockApi().getMenusByMallType('market');
+    CustomLogger.logger.d(test);
+  } catch(error) {
+    final errorData = await CommonException.setError(error);
+    CustomLogger.logger.e(errorData);
+  }
   runApp(const MainApp());
 }
 
