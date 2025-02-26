@@ -9,7 +9,6 @@ import 'display_mock_data.dart';
 class DisplayMockApi implements DisplayApi {
   @override
   Future<ResponseWrapper<List<MenuDto>>> getMenusByMallType(String mallType) {
-    throw SocketException('exception_test');
     return Future(
       () => ResponseWrapper(
         status: 'SUCCESS',
